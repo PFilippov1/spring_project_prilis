@@ -5,13 +5,13 @@
 <body>
 <h2>All Cars</h2>
 <br>
-<table>
+<table bordercolor="black" border="2" width="100%">
     <tr>
-        <th>Model</th>
-        <th>Color</th>
-        <th>Owner`s name</th>
-        <th>Owner`s phone</th>
-        <th>Owner`s email</th>
+        <th bgcolor="#ffe4c4">Model</th>
+        <th bgcolor="#ffe4c4">Color</th>
+        <th bgcolor="#ffe4c4">Owner`s name</th>
+        <th bgcolor="#ffe4c4">Owner`s phone</th>
+        <th bgcolor="#ffe4c4">Owner`s email</th>
     </tr>
     <c:forEach var="car" items="${allCars}">
 

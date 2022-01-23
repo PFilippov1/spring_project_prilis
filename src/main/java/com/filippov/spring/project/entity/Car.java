@@ -1,5 +1,9 @@
 package com.filippov.spring.project.entity;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,11 +17,14 @@ public class Car {
     private String model;
     @Column(name = "color")
     private String color;
-//    @Size(min = 2, message = "name must be min 3 symbols")
+    @NotEmpty
+    @Size(min = 3, message = "name must be min 3 symbols")
     @Column(name = "name_owner")
     private String name_owner;
     @Column(name = "phone_owner")
+    @NotEmpty
     private String phone_owner;
+    @Email (message = "please enter correct email")
     @Column(name = "email")
     private String email;
 
