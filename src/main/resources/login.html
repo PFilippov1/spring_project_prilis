@@ -1,0 +1,32 @@
+
+<!doctype html>
+<html lang="en" class="h-100" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="blocks/head :: head"/>
+<body class="d-flex h-100 text-white shadow-none">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div th:replace="blocks/header :: header"/>
+    <main>
+        <form th:action="@{/login}" method="post">
+            <h3 class="h4 mb-3 mt-5">Форма входа</h3>
+            <div class="alert alert-danger" role="alert" th:if="${param.error}">
+                Invalid login or password!
+            </div>
+            <div th:if="${param.logout}">
+                You have been logged out.
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Login</span>
+                <input type="text" class="form-control" name="username">
+                <span class="input-group-text">Password</span>
+                <input type="text" class="form-control" name="password">
+            </div>
+
+            <button class="btn btn-md btn-primary" type="submit">Enter</button>
+        </form>
+    </main>
+
+
+    <div th:replace="blocks/footer :: footer"/>
+</div>
+</body>
+</html>
